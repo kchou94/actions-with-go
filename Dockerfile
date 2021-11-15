@@ -5,7 +5,7 @@ FROM golang:1.17.3-alpine3.14 AS builder
 RUN apk update && apk add --no-cache git
 
 RUN mkdir /pro
-ADD ./usePost05.go /pro/
+ADD ./* /pro/
 WORKDIR /pro
 RUN go get -d -v ./...
 RUN go build -o server usePost05.go
